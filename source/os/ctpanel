@@ -1,0 +1,4 @@
+
+fs.open( "lol", "w" )
+file.writeLine("First line")
+file.writeLine("Second line")

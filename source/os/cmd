@@ -1,0 +1,6 @@
+term.clear()
+term.setCursorPos(1,1)
+print("Nejcraft Corporation command prompt")
+term.setCursorPos(1,2)
+print("Napis exit pro navrat na plochu")
+term.setCursorPos(1,3)

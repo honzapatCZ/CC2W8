@@ -1,0 +1,14 @@
+term.clear()
+local bar = paintutils.loadImage("os/bar")
+local plocha = paintutils.loadImage("os/plocha")
+term.setCursorPos(1,1)
+
+paintutils.drawImage(plocha, 1, 1)
+paintutils.drawImage(bar, 1, 19)
+term.setCursorPos(1,1)
+
+local evt, button, x, y = os.pullEvent("mouse_click")
+if x >= 1 and x <= 2 and y >= 19 and y <= 19 then
+shell.run("os/metro")
+
+end

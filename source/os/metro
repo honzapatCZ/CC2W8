@@ -1,0 +1,46 @@
+term.clear()
+local metroimg = paintutils.loadImage("os/metroimg")
+paintutils.drawImage(metroimg, 1, 1)
+
+term.setCursorPos(20,2)
+print("CMD")
+
+term.setCursorPos(4,2)
+print("Desktop")
+
+term.setCursorPos(5,8)
+print("Control")
+
+term.setCursorPos(6,9)
+print("Panel")
+
+term.setCursorPos(18,9)
+print("Monitor")
+
+
+
+
+while true do
+local evt, button, x, y = os.pullEvent("mouse_click")
+if x >= 4 and x <= 12 and y >= 3 and y <= 7 then
+shell.run("os/desktop")
+break
+
+elseif x >= 46 and x <= 49 and y >= 1 and y <= 2 then
+os.shutdown()
+
+elseif x >= 4 and x <= 12 and y >= 10 and y <= 14 then
+shell.run("os/userset")
+break
+
+
+elseif x >= 18 and x <= 25 and y >= 3 and y <= 7 then
+shell.run("os/cmd")
+break
+
+elseif x >= 18 and x <= 25 and y >= 10 and y <= 14 then
+shell.run("mirror right os/metro")
+break
+
+end
+end

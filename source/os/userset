@@ -1,0 +1,28 @@
+local bar = paintutils.loadImage("os/bar")
+local plocha = paintutils.loadImage("os/plocha")
+term.setCursorPos(1,1)
+
+paintutils.drawImage(plocha, 1, 1)
+paintutils.drawImage(bar, 1, 19)
+term.setCursorPos(1,1)
+
+local usersetimg = paintutils.loadImage("os/usersetimg")
+paintutils.drawImage(usersetimg, 7, 2)
+
+term.setCursorPos(10,5)
+print("Nove jmeno:")
+term.setCursorPos(10,6)
+name = read()
+term.setCursorPos(10,7)
+print("Nove Heslo:")
+term.setCursorPos(10,8)
+password = read("*")
+
+if password == "" then
+password = "nopassword"
+end
+
+ChangedNameO1 = fs.open("os/users/1.txt", "w")
+ChangedNameO1.write(name .."\n")
+ChangedNameO1.write(password)
+ChangedNameO1.close()

@@ -1,0 +1,128 @@
+-- ########################## -- Funktionen -- ############################ -- 
+local function s(...) return sleep(...) end
+local function w(...) return write(...) end
+local function p(...) return print(...) end
+local function tw(...) return term.write(...) end
+local function scp(...) return term.setCursorPos(...) end
+local function sbc(...) return term.setBackgroundColor(...) end
+local function stc(...) return term.setTextColor(...) end
+local function tc(...) return term.clear(...) end
+local function tcl(...) return term.clearLine() end
+local function scb(...) return term.setCursorBlink(...) end
+local function ts(...) return term.scroll(...) end
+local function r(...) return shell.run(...) end
+local function para(...) return parallel.waitForAny(...) end
+local function sw(...) return textutils.slowWrite(...) end
+local function sp(...) return textutils.slowPrint(...) end
+
+--############################### Profiles ##################################--
+function SystemProfiles()
+UserEdit = fs.open("os/users/1.txt", "r")
+         if UserEdit then
+          EditName1 = UserEdit.readLine()
+		  EditPass1  = UserEdit.readLine()
+         end
+
+--############################### Design ####################################-- 
+sbc(256)
+scp(1,4)
+stc(32768)
+write("Profiles    ")
+sbc(1)
+if dataname1a == EditName1 then
+sbc(128)
+scp(15,3)
+stc(1)
+write("1     ")
+scp(15,4)
+write("      ")
+scp(15,5)
+write("      ")
+scp(15,6)
+write("      ")
+else
+sbc(256)
+scp(15,3)
+stc(32768)
+write("1     ")
+scp(15,4)
+write("      ")
+scp(15,5)
+write("      ")
+scp(15,6)
+write("      ")
+end
+
+stc(32768)
+sbc(1)
+scp(22,3)
+write("Username:")
+scp(22,4)
+sbc(256)
+write("                             ")
+scp(22,4)
+write(EditName1)
+scp(22,5)
+sbc(1)
+write("Password:")
+scp(22,6)
+sbc(256)
+write("                             ")
+scp(22,6)
+if EditPass1 == "no password" then
+write("")
+else
+write("********")
+end
+
+
+
+
+--############################### Profiles ##################################--
+if X >= 22 and X <= 50 and Y == 4 then
+	                     scp(22,4)
+						 sbc(256)
+						 w("                           ")
+	                     stc(32768)
+						 scp(22,4)
+						 ChangedName1 = read()
+						 
+						 if ChangedName1 == "" then
+						 ChangedName1 = "Guest"
+						 end
+						 
+							if fs.exists("os/users/1.txt") then
+								ChangedNameO1 = fs.open("os/users/1.txt", "w")
+								ChangedNameO1.write(ChangedName1.."\n")
+								ChangedNameO1.write(ChangedPass1)
+								ChangedNameO1.close()
+							end
+		
+							SystemClear()
+							setLayout()
+							SystemProfiles()
+						end
+	                    if X >= 22 and X <= 50 and Y == 6 then
+	                     scp(22,6)
+						 sbc(256)
+						 w("                           ")
+	                     stc(32768)
+						 scp(22,6)
+						 ChangedPass1 = read("*")
+						 
+						 if ChangedPass1 == "" then
+						 ChangedPass1 = "123"
+						 end
+						 
+							if fs.exists("os/users/1.txt") then
+								ChangedNameO1 = fs.open("os/users/1.txt", "w")
+								ChangedNameO1.write(ChangedName1.."\n")
+								ChangedNameO1.write(ChangedPass1)
+								ChangedNameO1.close()
+							end
+		
+							SystemClear()
+							setLayout()
+							SystemProfiles()
+						end
+end   

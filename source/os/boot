@@ -1,0 +1,23 @@
+
+term.clear()
+term.setBackgroundColor("colors.black")
+local bt1 = paintutils.loadImage("os/nacitac1")
+local bt2 = paintutils.loadImage("os/nacitac2")
+local bt3 = paintutils.loadImage("os/nacitac3")
+local bt4 = paintutils.loadImage("os/nacitac4")
+local n = paintutils.loadImage("os/none")
+
+
+paintutils.drawImage(bt1, 1, 1)
+sleep(1)
+paintutils.drawImage(bt2, 1, 1)
+sleep(1)
+paintutils.drawImage(bt3, 1, 1)
+sleep(1)
+paintutils.drawImage(bt4, 1, 1)
+sleep(1)
+
+shell.run("os/logins")
+
+ 
+

@@ -1,0 +1,30 @@
+term.clear()
+local bar = paintutils.loadImage("os/bar")
+local plocha = paintutils.loadImage("os/plocha")
+term.setCursorPos(1,1)
+
+paintutils.drawImage(plocha, 1, 1)
+paintutils.drawImage(bar, 1, 19)
+term.setCursorPos(1,1)
+
+local time = os.time()
+local formattedTime = textutils.formatTime(time, false)
+term.setCursorPos(45,18)
+
+
+
+
+while true do
+local evt, button, x, y = os.pullEvent("mouse_click")
+if x >= 1 and x <= 2 and y >= 19 and y <= 19 then
+shell.run("os/metro")
+break
+
+elseif x >= 2 and x <= 8 and y >= 2 and y <= 7 then
+shell.run("os/redstone")
+break
+
+
+
+end
+end

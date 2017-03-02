@@ -1,0 +1,54 @@
+local bundledtime = false
+
+local plocha = paintutils.loadImage("os/redstoneimg")
+paintutils.drawImage(plocha, 1, 1)
+term.setCursorPos(1,1)
+print("S timto programkem muzes muzes ovladat bundled cable kliknutim na prislusnou barvu zapnes redstone v jednotlive barve a vypnes predeslou obrim zelenym cudlikem vypnes vsechno")
+
+
+while true do
+local evt, button, x, y = os.pullEvent("mouse_click")
+if x >= 50 and x <= 51 and y >= 1 and y <= 2 then
+shell.run("os/desktop")
+break
+
+
+
+
+elseif x >= 25 and x <= 27 and y >= 5 and y <= 7 then
+redstone.setBundledOutput("back", colors.orange)
+elseif x >= 29 and x <= 31 and y >= 5 and y <= 7 then
+redstone.setBundledOutput("back", colors.white)
+elseif x >= 5 and x <= 7 and y >= 9 and y <= 11 then
+redstone.setBundledOutput("back", colors.lightGray)
+elseif x >= 9 and x <= 11 and y >= 9 and y <= 11 then
+redstone.setBundledOutput("back", colors.gray)
+elseif x >= 13 and x <= 15 and y >= 9 and y <= 11 then
+redstone.setBundledOutput("back", colors.pink)
+elseif x >= 17 and x <= 19 and y >= 9 and y <= 11 then
+redstone.setBundledOutput("back", colors.lime)
+elseif x >= 21 and x <= 23 and y >= 9 and y <= 11 then
+redstone.setBundledOutput("back", colors.yellow)
+elseif x >= 25 and x <= 27 and y >= 9 and y <= 11 then
+redstone.setBundledOutput("back", colors.lightBlue)
+elseif x >= 29 and x <= 31 and y >= 9 and y <= 11 then
+redstone.setBundledOutput("back", colors.magenta)
+elseif x >= 5 and x <= 7 and y >= 14 and y <= 16 then
+redstone.setBundledOutput("back", colors.black)
+elseif x >= 9 and x <= 11 and y >= 14 and y <= 16 then
+redstone.setBundledOutput("back", colors.red)
+elseif x >= 13 and x <= 15 and y >= 14 and y <= 16 then
+redstone.setBundledOutput("back", colors.green)
+elseif x >= 17 and x <= 19 and y >= 14 and y <= 16 then
+redstone.setBundledOutput("back", colors.brown)
+elseif x >= 21 and x <= 23 and y >= 14 and y <= 16 then
+redstone.setBundledOutput("back", colors.blue)
+elseif x >= 25 and x <= 27 and y >= 14 and y <= 16 then
+redstone.setBundledOutput("back", colors.purple)
+elseif x >= 29 and x <= 31 and y >= 14 and y <= 16 then
+redstone.setBundledOutput("back", colors.cyan)
+elseif x >= 34 and x <= 42 and y >= 11 and y <= 16 then
+redstone.setBundledOutput("back", 0)
+
+end
+end
