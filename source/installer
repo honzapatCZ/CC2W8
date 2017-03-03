@@ -31,5 +31,5 @@ downloadFile("/os/redstone", "https://raw.githubusercontent.com/NejcraftCCprojec
 downloadFile("/os/redstoneimg", "https://raw.githubusercontent.com/NejcraftCCprojects/CC2W8/master/source/os/redstoneimg")
 downloadFile("/os/userset", "https://raw.githubusercontent.com/NejcraftCCprojects/CC2W8/master/source/os/userset")
 downloadFile("/os/usersetimg", "https://raw.githubusercontent.com/NejcraftCCprojects/CC2W8/master/source/os/usersetimg")
-
+downloadFile("/os/version", "https://raw.githubusercontent.com/NejcraftCCprojects/CC2W8/master/source/os/version")
 os.reboot()
