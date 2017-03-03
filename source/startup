@@ -1,2 +1,31 @@
+function checkUpdate()
+	versionFile = fs.open("/os/version", "r")
+	currentVersion = tonumber(versionFile.readLine())
+	newVersion = tonumber(http.get("https://raw.githubusercontent.com/NejcraftCCprojects/CC2W8/master/source/os/version").readAll())
+	versionFile.close()
+	if(newVersion > currentVersion)then
+		return true
+	end
+	return false
+end
+function run()
+	term.clear()
+	term.setCursorPos(1,1)
+	print("Checking for updates...")
+	if(checkUpdate())then
+		print("An update has been detected!")
+		print("Would you like to update? (Yes/No)")
+		write("> ")
+		update = read()
+	end
+	if(update == "Yes" or update == "yes" or update == "Y" or update == "y")then
+		file = assert(io.open("/startup", "w"))
+		file:write("shell.run('install')")
+		file:close()
+		os.reboot()
+	else
+     shell.run("os/boot")
+	end
+end
+run()
 
-shell.run("os/boot")
